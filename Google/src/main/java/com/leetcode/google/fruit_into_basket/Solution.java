@@ -41,9 +41,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-//        int[] fruits = {1, 2, 3, 2, 2};
-        int[] fruits2 = {0, 1, 6, 6, 4, 4, 6};
-//        System.out.println(totalFruit(fruits1));
-        System.out.println(totalFruit(fruits2));
+        int[] fruits = {0, 1, 6, 6, 4, 4, 6};
+        System.out.println(totalFruit(fruits));
     }
 }
