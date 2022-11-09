@@ -1,25 +1,53 @@
 package com.leetcode.array.rotate_array;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Solution {
-    public static void rotate(int[] nums, int k) {
 
-        if (k == 0) {
-            return ;
-        }
-        int temp = 0;
-        int j = 0;
+    /**
+     * Using temporary full-size array<br>
+     * The worst method<br>
+     * Time complexity: O(N) , Auxiliary Space: O(N)
+     */
+    public static void rotateWithBigTempArray(int[] nums, int k) {
+        k = k % nums.length;
+        int newIdx = 0;
+        int[] copy = Arrays.copyOf(nums, nums.length);
+
         for (int i = 0; i < nums.length; i++) {
-            int newIdx = (j + k) % nums.length;
-            temp = nums[]
+            newIdx = (i + k) % nums.length;
+            nums[newIdx] = copy[i];
         }
     }
 
-    public static void main(String [] args) {
-        int[] nums = {1, 2, 3, 4, 5, 6};
-        rotate(nums, 2);
-        System.out.println(Arrays.toString(nums));
+    /**
+     * Using short temp array<br>
+     * Time complexity: O(N) , Auxiliary Space: O(k)<br>
+     * Best decision so far
+     */
+    public static void rotateWithSmallTempArray(int[] nums, int k) {
+        // If k > nums.length -> avoid useless work
+        k = k % nums.length;
+        // Copying first (nums.length - k) elements to temp array
+        int[] temp = Arrays.copyOfRange(nums, 0, nums.length - k);
+
+        // Copy tail of array to the head
+        for (int i = nums.length - k; i < nums.length; i++) {
+            nums[i - nums.length + k] = nums[i];
+        }
+        // Copy saved temp to tail
+        for (int i = 0; i < nums.length - k; i++) {
+            nums[i + k] = temp[i];
+        }
+    }
+
+    public static void rotateRecursively(int[] nums, int k) {
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        int[] arr2 = {-1, -100, 3, 99};
+        rotateWithSmallTempArray(arr, 3);
+        System.out.println(Arrays.toString(arr));
     }
 }
