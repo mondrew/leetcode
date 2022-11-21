@@ -3,8 +3,8 @@ package com.leetcode.array.remove_duplicates_from_sorted_array;
 public class Solution {
 
     /**
-     * Time complexity : O(n), since we only have 2 pointers, and both the pointers will traverse the array at most once.<br>
-     * Space complexity : O(1), since we are not using any extra space.
+     * Time: O(n), since we only have 2 pointers, and both the pointers will traverse the array at most once.<br>
+     * Memory: O(1), since we are not using any extra space.
      */
     public static int removeDuplicates(int[] nums) {
         int insertIndex = 1;

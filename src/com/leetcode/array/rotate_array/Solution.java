@@ -5,25 +5,10 @@ import java.util.Arrays;
 public class Solution {
 
     /**
-     * Using temporary full-size array<br>
-     * The worst method<br>
-     * Time complexity: O(N) , Auxiliary Space: O(N)
-     */
-    public static void rotateWithBigTempArray(int[] nums, int k) {
-        k = k % nums.length;
-        int newIdx = 0;
-        int[] copy = Arrays.copyOf(nums, nums.length);
-
-        for (int i = 0; i < nums.length; i++) {
-            newIdx = (i + k) % nums.length;
-            nums[newIdx] = copy[i];
-        }
-    }
-
-    /**
-     * Using short temp array<br>
-     * Time complexity: O(N) , Auxiliary Space: O(k)<br>
-     * Best decision so far
+     * Using short temp array.<br>
+     * Time: O(N).<br>
+     * Memory: O(k).<br>
+     * Best decision so far.
      */
     public static void rotateWithSmallTempArray(int[] nums, int k) {
         // If k > nums.length -> avoid useless work
@@ -41,7 +26,21 @@ public class Solution {
         }
     }
 
-    public static void rotateRecursively(int[] nums, int k) {
+    /**
+     * Using temporary full-size array.<br>
+     * The worst method.<br>
+     * Time: O(N).<br>
+     * Memory: O(N).
+     */
+    public static void rotateWithBigTempArray(int[] nums, int k) {
+        k = k % nums.length;
+        int newIdx = 0;
+        int[] copy = Arrays.copyOf(nums, nums.length);
+
+        for (int i = 0; i < nums.length; i++) {
+            newIdx = (i + k) % nums.length;
+            nums[newIdx] = copy[i];
+        }
     }
 
     public static void main(String[] args) {

@@ -24,9 +24,9 @@ public class Solution2 {
     }
 
     public static void main(String[] args) {
-//        int[] arr = {1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 6, 7, 7, 7, 8};
-        int[] arr = {1};
-        int res = removeDuplicates(arr);
+        int[] arr = {1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 6, 7, 7, 7, 8};
+        int[] arr2 = {1};
+        int res = removeDuplicates(arr2);
         System.out.println(res);
     }
 }
