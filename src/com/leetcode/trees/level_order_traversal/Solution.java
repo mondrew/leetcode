@@ -18,13 +18,15 @@ public class Solution {
 
     private static List<Integer> getTreeValuesForLevel(TreeNode root, int level, List<Integer> list) {
         if (level == 0) {
-            if (root != null) {
-                list.add(root.val);
-            }
+            list.add(root.val);
             return list;
         }
-        list.addAll(getTreeValuesForLevel(root.left, level - 1, new ArrayList<>()));
-        list.addAll(getTreeValuesForLevel(root.right, level - 1, new ArrayList<>()));
+        if (root.left != null) {
+            getTreeValuesForLevel(root.left, level - 1, list);
+        }
+        if (root.right != null) {
+            getTreeValuesForLevel(root.right, level - 1, list);
+        }
         return list;
     }
 
@@ -41,11 +43,17 @@ public class Solution {
         /*
             Tree: [3,9,20,null,null,15,7]
          */
-        TreeNode secondChildLeft = new TreeNode(15);
-        TreeNode secondChildRight = new TreeNode(7);
-        TreeNode firstChildLeft = new TreeNode(9);
-        TreeNode firstChildRight = new TreeNode(20, secondChildLeft, secondChildRight);
-        TreeNode root = new TreeNode(3, firstChildLeft, firstChildRight);
+//        TreeNode secondChildLeft = new TreeNode(15);
+//        TreeNode secondChildRight = new TreeNode(7);
+//        TreeNode firstChildLeft = new TreeNode(9);
+//        TreeNode firstChildRight = new TreeNode(20, secondChildLeft, secondChildRight);
+//        TreeNode root = new TreeNode(3, firstChildLeft, firstChildRight);
+//        System.out.println(levelOrder(root));
+
+        /*
+            Tree: [1,2,null,3,null,4,null,5]
+         */
+        TreeNode root = new TreeNode(3, , );
         System.out.println(levelOrder(root));
     }
 }
