@@ -43,17 +43,11 @@ public class Solution {
         /*
             Tree: [3,9,20,null,null,15,7]
          */
-//        TreeNode secondChildLeft = new TreeNode(15);
-//        TreeNode secondChildRight = new TreeNode(7);
-//        TreeNode firstChildLeft = new TreeNode(9);
-//        TreeNode firstChildRight = new TreeNode(20, secondChildLeft, secondChildRight);
-//        TreeNode root = new TreeNode(3, firstChildLeft, firstChildRight);
-//        System.out.println(levelOrder(root));
-
-        /*
-            Tree: [1,2,null,3,null,4,null,5]
-         */
-        TreeNode root = new TreeNode(3, , );
+        TreeNode secondChildLeft = new TreeNode(15);
+        TreeNode secondChildRight = new TreeNode(7);
+        TreeNode firstChildLeft = new TreeNode(9);
+        TreeNode firstChildRight = new TreeNode(20, secondChildLeft, secondChildRight);
+        TreeNode root = new TreeNode(3, firstChildLeft, firstChildRight);
         System.out.println(levelOrder(root));
     }
 }
