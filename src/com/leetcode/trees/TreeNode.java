@@ -38,4 +38,12 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+    @Override
+    public String toString() {
+        String root = "[" + val + "]";
+        String leftLeaf = left != null ? left.toString() : "[null]";
+        String rightLeaf = right != null ? right.toString() : "[null]";
+        return root + "\n" + leftLeaf + " --- " + rightLeaf;
+    }
 }
