@@ -2,26 +2,23 @@ package com.leetcode.dynamic_programming.maximum_subarray;
 
 public class Solution {
 
-    public static int maxProfit(int[] prices) {
-        int maxProfit = 0;
-        int buyIdx = 0;
-        int sellIdx = 1;
-
-        while (sellIdx < prices.length) {
-            int profit = prices[sellIdx] - prices[buyIdx];
-            if (profit > 0) {
-                maxProfit = Math.max(profit, maxProfit);
-                sellIdx++;
-            } else {
-                buyIdx = sellIdx++;
-            }
+    public static int maxSubArray(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
         }
-        return maxProfit;
+        int maxSum = nums[0];
+        int[] sumArr = new int[nums.length];
+        sumArr[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            sumArr[i] = nums[i] + Math.max(0, sumArr[i - 1]);
+            maxSum = Math.max(maxSum, sumArr[i]);
+        }
+        return maxSum;
     }
 
     public static void main(String[] args) {
-        int[] prices = {7, 1, 5, 3, 6, 4};
-        int[] prices2 = {7, 6, 4, 3, 1};
-        System.out.println(maxProfit(prices2));
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int[] nums2 = {-2, 1};
+        System.out.println(maxSubArray(nums2));
     }
 }
