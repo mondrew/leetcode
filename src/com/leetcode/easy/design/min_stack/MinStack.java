@@ -34,6 +34,7 @@ public class MinStack {
         Node tmp = head;
         while (tmp != null) {
             min = Math.min(min, tmp.val);
+            tmp = tmp.next;
         }
     }
 
