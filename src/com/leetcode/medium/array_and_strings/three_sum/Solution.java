@@ -1,4 +1,4 @@
-package com.leetcode.medium.linked_list.three_sum;
+package com.leetcode.medium.array_and_strings.three_sum;
 
 import java.util.*;
 
