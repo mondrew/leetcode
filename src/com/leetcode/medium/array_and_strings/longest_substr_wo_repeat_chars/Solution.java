@@ -1,32 +1,31 @@
 package com.leetcode.medium.array_and_strings.longest_substr_wo_repeat_chars;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Solution {
 
     public static int lengthOfLongestSubstring(String s) {
+        if (s.isEmpty()) {
+            return 0;
+        }
         int maxLength = 1;
         int i = 0;
         int j = 0;
-        Map<Character, Integer> map = new HashMap<>();
-        while (i < s.length() && j < s.length()) {
-            while (j < s.length() && !map.containsKey(s.charAt(j))) {
-                map.put(s.charAt(j), 1);
-                j++;
+        Set<Character> set = new HashSet<>();
+        while (i < s.length()) {
+            while (j < s.length() && !set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
             }
+            maxLength = Math.max(maxLength, j - i);
             if (j == s.length()) {
-                int size = j - i;
-                maxLength = Math.max(maxLength, size);
+                break;
             }
-
-            if (map.containsKey(s.charAt(j))) {
-                map.put(s.charAt(j), 2);
-            } else {
-                map.put(s.charAt(j), 1);
-                maxLength
+            while (i < j && set.contains(s.charAt(j))) {
+                set.remove(s.charAt(i++));
             }
         }
+        return maxLength;
     }
 
     public static void main(String[] args) {
