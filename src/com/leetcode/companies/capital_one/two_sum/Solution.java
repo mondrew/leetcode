@@ -3,6 +3,10 @@ package com.leetcode.companies.capital_one.two_sum;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * LeetCode 1. TwoSum
+ * https://leetcode.com/problems/two-sum/description/
+ */
 public class Solution {
 
     public int[] twoSum(int[] nums, int target) {
