@@ -12,7 +12,7 @@ public class Solution {
         Deque<Node> deque = new ArrayDeque<>();
         Node dummyHead = new Node();
         Node savedDummyHead = dummyHead;
-        deque.addFirst(head);
+        deque.push(head);
         while (!deque.isEmpty()) {
             Node curr = deque.poll();
             if (curr.next != null) {

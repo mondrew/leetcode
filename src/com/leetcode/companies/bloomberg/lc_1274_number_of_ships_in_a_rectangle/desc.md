@@ -1,4 +1,6 @@
 # 1274. Number of Ships in a Rectangle
+https://leetcode.com/problems/number-of-ships-in-a-rectangle/
+
 (This problem is an interactive problem.)
 
 Each ship is located at an integer point on the sea represented by a cartesian plane, and each integer point may contain at most 1 ship.

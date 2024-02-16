@@ -24,7 +24,6 @@ public class Solution {
         for (int i = 0; i < costs.length / 2; i++) {
             result += costs[i][0];
         }
-        LinkedHashMap<Integer, Integer> m = new LinkedHashMap<>();
         for (int i = costs.length / 2; i < costs.length; i++) {
             result += costs[i][1];
         }
